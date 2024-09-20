@@ -16,5 +16,5 @@ COPY db.sqlite3 /app/db.sqlite3
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Run Django
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "your_project_name.wsgi:application"]
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "BankApp.wsgi:application"]
