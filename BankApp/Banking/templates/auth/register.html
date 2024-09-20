@@ -1,0 +1,64 @@
+{% extends "layouts/app.html" %}
+
+{% block content %}
+<style>
+    .form-container {
+        background-color: #fff; /* White background for the form */
+        padding: 30px; /* Padding inside the box */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+        width: 100%; /* Full width inside the column */
+        max-width: 400px; /* Limit maximum width */
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .full-height {
+        height: 100vh; /* Full viewport height */
+        display: flex; /* Enable flexbox for vertical centering */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        background-color: #f8f9fa; /* Light gray background */
+    }
+
+    .form-group label {
+        margin-bottom: 10px; /* Space between the label and input */
+        display: block; /* Ensure the label takes full width above the input */
+    }
+
+    .form-group input {
+        margin-bottom: 15px; /* Add space between the input fields */
+    }
+</style>
+
+<div class="row full-height">
+    <div class="col-sm-6 col-md-4">
+        <div class="form-container">
+        <h2 class="text-muted">Register</h2>
+        <form action="{% url "register" %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{form.username.id_for_label}}">Username:</label>
+                <input type="text" name="{{ form.username.name }}" class="form-control" value="{{ form.username.value}}">
+                <span class="text-danger">{{ form.username.errors }}</span>
+            </div>
+
+            <div class="form-group">
+                <label for="{{form.password1.id_for_label}}">Password:</label>
+                <input type="password" name="{{ form.password1.name }}" class="form-control" value="{{ form.password1.value}}">
+                <span class="text-danger">{{ form.password1.errors }}</span>
+            </div>
+
+            <div class="form-group">
+                <label for="{{form.password2.id_for_label}}">Re-enter Password:</label>
+                <input type="password" name="{{ form.password2.name }}" class="form-control" value="{{ form.password2.value}}">
+                <span class="text-danger">{{ form.password2.errors }}</span>
+            </div>
+
+            <button class="btn btn-dark" style="align-items:center;">Submit</button>
+            <a href="{% url 'login' %}" class="btn btn-default">Login</a>
+
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock %}

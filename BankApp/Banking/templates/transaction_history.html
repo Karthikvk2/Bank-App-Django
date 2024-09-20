@@ -1,0 +1,39 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<div class="transaction">
+    <h2>Transaction History</h2>
+    <table>
+        <tr>
+            <th>Transaction ID</th>
+            <th>Type</th>
+            <th>Recipient</th>
+            <th>Amount</th>
+            <th>Date & Time</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.transaction_id }}</td>
+            <td>{{ transaction.transaction_type }}</td>
+            <td>
+                {% if transaction.transaction_type == 'Bill Payment' %}
+                    Bill Payment
+                {% else %}
+                    {{ transaction.receiver.username }}
+                {% endif %}
+            </td>
+            
+            <td class="{% if transaction.transaction_type == 'Debited' or transaction.transaction_type == 'Bill Payment'  %}text-danger{% else %}text-success{% endif %}">
+                {{ transaction.amount }}
+            </td>
+            <td>{{ transaction.timestamp }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No transactions found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'dashboard' %}" class="btn btn-dark">Back to Dashboard</a>
+</div>
+{% endblock %}

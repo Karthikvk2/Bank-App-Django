@@ -1,0 +1,11 @@
+{% extends "layouts/app.html" %}
+{% block content %}
+<div class="balance-result card">
+    <h2>Account Balance</h2>
+    <div class="card-body">
+        <h5 class="card-title">{{ account.account_number }} - {{ account.full_name }}</h5>
+        <p class="card-text">Current Balance: <strong>₹{{ account.balance }}</strong></p>
+    </div>
+    <a href="{% url 'check_balance' %}" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}

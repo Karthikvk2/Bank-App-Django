@@ -1,0 +1,65 @@
+<!-- manage_account.html -->
+{% extends "layouts/app.html" %}
+{% block content %}
+<div class="container">
+    <div class="form-card">
+        <h2>Manage Account</h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <label for="account_number">Account Number:</label>
+            <input type="text" id="account_number" name="account_number" required>
+
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="full_name" required>
+
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" id="phone_number" name="phone_number" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="account_type">Account Type:</label>
+            <select id="account_type" name="account_type" required>
+                <option value="">Select Account Type</option>
+                <option value="savings">Savings</option>
+                <option value="current">Current</option>
+            </select>
+
+            <label for="balance">Initial Balance:</label>
+            <input type="text" id="balance" name="balance" required>
+
+            <label for="bank_pin">Bank PIN:</label>
+            <input type="password" id="bank_pin" name="bank_pin" required>
+
+            <button type="submit" class="btn btn-primary">Add Account</button>
+        </form>
+    </div>
+
+    <div class="existing-accounts">
+        <h3>Your Accounts</h3>
+        <div class="row">
+            {% for account in accounts %}
+                <div class="col-md-4">
+                    <div class="account-card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ account.full_name }} ({{ account.account_type }})</h5>
+                            <p class="card-text">Account Number: {{ account.account_number }}</p>
+                            <p class="card-text">Phone: {{ account.phone_number }}</p>
+                            <p class="card-text">Email: {{ account.email }}</p>
+                            <div class="button-group">
+                                <a href="{% url 'edit_account' account.id %}" class="btn btn-warning">Edit</a>
+                                <form method="POST" action="{% url 'delete_account' account.id %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <a href="{% url 'dashboard' %}" class="btn btn-dark">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

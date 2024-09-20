@@ -1,0 +1,32 @@
+{% extends "layouts/app.html" %}
+{% block content %}
+<div class="billpayment card">
+    <h2>Pay Your Bill</h2>
+    <form method="POST" class="billpayment-form">
+        {% csrf_token %}
+        
+        <div class="billpayment-form-group">
+            <label for="{{ form.bill_number.id_for_label }}">{{ form.bill_number.label }}</label>
+            {{ form.bill_number }}
+        </div>
+        
+        <div class="billpayment-form-group">
+            <label for="{{ form.amount.id_for_label }}">{{ form.amount.label }}</label>
+            {{ form.amount }}
+        </div>
+        
+        <div class="billpayment-form-group">
+            <label for="{{ form.account.id_for_label }}">{{ form.account.label }}</label>
+            {{ form.account }}
+        </div>
+        
+        <div class="billpayment-form-group">
+            <label for="{{ form.bank_pin.id_for_label }}">{{ form.bank_pin.label }}</label>
+            {{ form.bank_pin }}
+        </div>
+        
+        <button type="submit">Submit Payment</button>
+    </form>
+    <a href="{% url 'dashboard' %}" class="btn btn-dark">Back to Dashboard</a>
+</div>
+{% endblock %}

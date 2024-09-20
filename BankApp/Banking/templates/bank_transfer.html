@@ -1,0 +1,38 @@
+{% extends "layouts/app.html" %}
+{% block content %}
+<div class="banktransfer card">
+    <h2>Fund Transfer</h2>
+    <form method="POST" action="{% url 'bank_transfer' %}" class="banktransfer-form">
+        {% csrf_token %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="banktransfer-form-group">
+            <label for="sender_account">Select Sender Account:</label>
+            <select name="sender_account" id="sender_account" required>
+                {% for account in user.bankaccount_set.all %}
+                    <option value="{{ account.id }}">{{ account.account_number }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="banktransfer-form-group">
+            <label for="recipient_account">Enter Recipient Account Number:</label>
+            <input type="text" name="recipient_account" id="recipient_account" required>
+        </div>
+        <div class="banktransfer-form-group">
+            <label for="amount">Enter Amount:</label>
+            <input type="number" step="0.01" name="amount" id="amount" required>
+        </div>
+        <div class="banktransfer-form-group">
+            <label for="bank_pin">Enter Bank PIN:</label>
+            <input type="password" name="bank_pin" id="bank_pin" required>
+        </div>
+        <button type="submit">Transfer</button>
+    </form>
+    <a href="{% url 'dashboard' %}" class="btn btn-dark">Back to Dashboard</a>
+</div>
+{% endblock %}

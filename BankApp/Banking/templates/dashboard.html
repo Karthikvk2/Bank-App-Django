@@ -1,0 +1,43 @@
+{% extends "layouts/app.html" %} {% load static %}{% block content %}
+
+<header>
+  <nav class="navbar">
+    <div class="app-name">BankApp</div>
+    <a
+          href="{% url 'logout' %}"
+          class="logout-btn"
+          type="submit"
+          >Logout</a
+        >
+</nav>
+</header>
+<main>
+  <div class="dashboard-container">
+  <a class="image-button" href="{% url 'manage_account' %}">
+    <img src="{% static "images/1.PNG" %}" alt="..." />
+  </a>
+
+  <a class="image-button" href="{% url 'bank_transfer'%}">
+    <img src="{% static "images/2.PNG" %}" class="card-img-top" alt="..." />
+  </a>
+
+  <a class="image-button" href="{% url 'bill_payment'%}">
+    <img src="{% static "images/3.PNG" %}" class="card-img-top" alt="..." />
+  </a>
+
+
+  <a class="image-button" href="{% url 'check_balance'%}">
+    <img src="{% static "images/4.PNG" %}" class="card-img-top" alt="..." />
+  </a>
+
+  <a class="image-button" href="{% url 'transaction_history'%}">
+    <img src="{% static "images/5.PNG" %}" class="card-img-top" alt="..." />
+  </a>
+</div>
+</main>
+
+<footer>
+  All rights reserved to BankApp
+</footer>
+
+{% endblock %}

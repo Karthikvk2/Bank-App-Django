@@ -1,0 +1,476 @@
+header {
+    width: 100%; 
+    position: relative; 
+}
+
+.navbar {
+    background-color: #333; 
+    color: #fff; 
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+.navbar .app-name {
+    font-size: 24px; 
+    font-weight: bold;
+}
+
+.navbar .logout-btn {
+    background-color: #f44336; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.navbar .logout-btn:hover {
+    background-color: #d32f2f; 
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .navbar .logout-btn {
+        margin-top: 10px; 
+    }
+}
+
+.content {
+    padding-top: 80px; 
+}
+
+footer {
+    background-color: #333; 
+    color: #fff; 
+    padding: 10px 0; 
+    text-align: center; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: 1000; 
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .navbar .logout-btn {
+        margin-top: 10px; 
+    }
+}
+
+.content {
+    padding-top: 80px; 
+    padding-bottom: 40px; 
+}
+
+.image-button {
+    display: inline-block;
+    border: none;
+    background-color: transparent; 
+    cursor: pointer;
+    padding: 10px; 
+}
+
+.image-button img {
+    width: 100%;
+    max-width: 200px; 
+    height: auto;
+    transition: transform 0.2s;
+    border-radius: 30px;
+}
+
+.image-button:hover img {
+    transform: scale(1.1); 
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    height: 100vh; 
+    padding: 20px; 
+}
+
+@media (max-width: 768px) {
+    .image-button img {
+        max-width: 150px; 
+    }
+
+    .dashboard-container {
+        padding: 10px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .image-button img {
+        max-width: 120px; 
+    }
+
+    .dashboard-container {
+        padding: 5px; 
+    }
+}
+
+.form-card {
+    width: 50%; 
+    margin: 20px auto; 
+    padding: 30px; 
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+.form-card form {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="password"],
+.form-card select,
+.form-card textarea {
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+}
+
+.form-card button {
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.form-card button:hover {
+    background-color: #0056b3; 
+}
+
+.container {
+    display: flex; 
+    justify-content: space-between; 
+    padding: 20px; 
+}
+
+.form-card {
+    width: 40%; 
+    padding: 30px; 
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+.existing-accounts {
+    width: 55%; 
+    padding: 20px; 
+}
+
+.row {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .form-card, .existing-accounts {
+        width: 90%; 
+    }
+}
+
+.container {
+    display: flex; 
+    justify-content: space-between; 
+    padding: 40px; 
+}
+
+.form-card {
+    width: 40%; 
+    padding: 30px; 
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+.existing-accounts {
+    width: 55%; 
+    padding: 20px; 
+}
+
+.account-card {
+    padding: 20px; 
+    margin-bottom: 20px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+.button-group {
+    margin-top: 10px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .form-card, .existing-accounts {
+        width: 90%; 
+    }
+}
+
+.banktransfer.card {
+    max-width: 400px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #fff; 
+}
+
+.banktransfer-form-group {
+    margin-bottom: 20px; 
+}
+
+.banktransfer-form-group label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+.banktransfer-form input,
+.banktransfer-form select,
+.banktransfer-form button {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.banktransfer-form button {
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    margin-bottom: 5px;
+}
+
+.banktransfer-form button:hover {
+    background-color: #0056b3; 
+}
+
+.billpayment.card {
+    max-width: 400px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #fff; 
+}
+
+.billpayment-form-group {
+    margin-bottom: 20px; 
+}
+
+.billpayment-form-group label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+.billpayment-form-group input,
+.billpayment-form-group select {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.billpayment-form button {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+.billpayment-form button:hover {
+    background-color: #0056b3; 
+}
+
+.checkbalance.card {
+    max-width: 400px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #fff; 
+}
+
+.checkbalance .form-label {
+    margin-bottom: 5px; 
+}
+
+.checkbalance .form-control {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.checkbalance .btn-primary {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    margin-bottom: 5px;
+}
+
+.checkbalance .btn-primary:hover {
+    background-color: #0056b3; 
+}
+
+.alert.alert-danger {
+    margin-top: 20px; 
+}
+
+.balance-result.card {
+    max-width: 400px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #fff; 
+}
+
+.balance-result .form-label {
+    margin-bottom: 5px; 
+}
+
+.balance-result .form-control {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.balance-result .btn-primary {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    margin-bottom: 5px;
+}
+
+.balance-result .btn-primary:hover {
+    background-color: #0056b3; 
+}
+
+.history {
+    max-width: 600px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #fff; 
+}
+
+.history h2 {
+    margin-bottom: 20px; 
+}
+
+.transaction {
+    max-width: 800px; 
+    margin: 50px auto; 
+    border-collapse: collapse; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    background-color: #fff; 
+    border-radius: 8px; 
+}
+
+.transaction h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.transaction table {
+    width: 100%; 
+}
+
+.transaction th,
+.transaction td {
+    padding: 15px; 
+    text-align: left; 
+    border-bottom: 1px solid #ccc; 
+}
+
+.transaction th {
+    background-color: #f8f9fa; 
+    font-weight: bold; 
+}
+
+.transaction tr:hover {
+    background-color: #f1f1f1; 
+}
+
+.transaction .btn-dark {
+    display: block; 
+    margin: 20px auto; 
+    width: 200px; 
+    padding: 10px; 
+    text-align: center; 
+    border-radius: 5px; 
+    background-color: #343a40; 
+    color: white;
+    border: none; 
+    cursor: pointer; 
+}
+
+.transaction .btn-dark:hover {
+    background-color: #495057; 
+}
+
+
+.text-success {
+    color: green; 
+}
+
+.text-danger {
+    color: red; 
+}
