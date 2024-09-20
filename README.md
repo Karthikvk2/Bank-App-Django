@@ -9,12 +9,12 @@ Fund Transfers: Easily transfer funds between accounts.
 Bill Payments: Pay bills directly from the application.
 Balance Check: View the current balance of each account.
 Transaction History: Check the history of transactions for better financial management.
-Technologies Used
 
-## Frontend:
+## Technologies Used
+### Frontend:
 HTML
 CSS
 
-## Backend:
+### Backend:
 Django (Python framework)
 MySQL (database)
