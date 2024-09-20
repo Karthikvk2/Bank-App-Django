@@ -1,17 +1,13 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "manage.py",
+    "builds": [{
+        "src": "BankApp/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb" }
-      }
-    ],
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9"}
+    }],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "manage.py"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "BankApp/wsgi.py"
+        }
     ]
-  }
-  
+}
