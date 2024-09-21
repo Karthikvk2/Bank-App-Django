@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-#import dj_database_url
-#DATABASE_URL = "postgresql://postgres:cFbqlHcxaaXnwagbwXnctQLldtxRnkXm@autorack.proxy.rlwy.net:34779/railway"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4fn-gy)gfl2pss!g-w&#pi@_f1ekf31r-zcu86b*x9@4nt6%cb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
