@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory
 WORKDIR /app
 
-# Install system dependencies required for PostgreSQL
+# Install system dependencies required for PostgreSQL and others
 RUN apt-get update && apt-get install -y \
     gcc \
     libpq-dev \
@@ -23,6 +23,9 @@ RUN python -m venv /opt/venv
 # Install dependencies
 RUN /opt/venv/bin/pip install --upgrade pip
 RUN /opt/venv/bin/pip install -r requirements.txt
+
+# Collect static files
+RUN /opt/venv/bin/python manage.py collectstatic --noinput
 
 # Expose the port your app runs on
 EXPOSE 8000
